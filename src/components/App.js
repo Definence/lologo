@@ -1,15 +1,19 @@
 import React from 'react'
-import logo from './logo.svg'
+
 import './App.css'
+import BusinessPage from '../components/BusinessPage'
 
 class App extends React.PureComponent {
   constructor(props) {
     super(props)
     this.steps = ['business', 'color', 'styles']
     this.state = {
-      step: this.steps[0]
+      step: this.steps[0],
+      business: '',
     }
   }
+
+  changeBusiness = ({ target: { value: business } }) => this.setState(() => ({ business }))
 
   handleNextStep = () => {
     const currentStepIndex = this.steps.indexOf(this.state.step)
@@ -25,23 +29,29 @@ class App extends React.PureComponent {
     if (currentStepIndex !== this.steps.length - 1) this.setState(() => ({ step: previousStepIndex }))
   }
 
+  renderComponent = () => {
+    const { step, business } = this.state
+    const isBusinessPage = step === this.steps[0]
+    const isColorPage = step === this.steps[1]
+    const isStylesPage = step === this.steps[2]
+
+    if (isBusinessPage) {
+      return <BusinessPage business={business} changeBusiness={this.changeBusiness} />
+    } else if (isColorPage) {
+      return
+    } else if (isStylesPage) {
+      return
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+      <div>
+        <header>
+          <p>Founders Design</p>
         </header>
+
+        {this.renderComponent()}
       </div>
     )
   }

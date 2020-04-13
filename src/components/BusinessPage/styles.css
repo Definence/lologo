@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(100vh - 70px);
+}
+
+.form-container {
+  width: 300px
+}
+
+.form-container > * {
+  margin-bottom: 1rem;
+}
