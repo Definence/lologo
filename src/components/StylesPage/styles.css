@@ -1,0 +1,18 @@
+.business-style {
+  min-width: 300px;
+  height: 200px;
+  font-size: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min-content;
+  padding: 0 20px;
+  border-radius: 13px;
+  color: white;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+.styles-logos-container {
+  padding: 1rem;
+}

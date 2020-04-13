@@ -3,6 +3,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Helvetica Neue, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+}
+
+p {
+  margin: 0;
+  font-size: 22px;
+  text-align: center;
 }
 
 input {
@@ -35,6 +42,7 @@ button {
   max-width: 300px;
   font-weight: bold;
   cursor: pointer;
+  margin: auto;
 }
 
 button:disabled {
@@ -44,6 +52,7 @@ button:disabled {
 
 header {
   text-align: center;
+  background-color: white;
   color: #543EF8;
   font-size: 30px;
   font-weight: 700;
