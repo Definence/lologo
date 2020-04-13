@@ -17,7 +17,6 @@ const StylesPage = ({ color, business }) => {
 
   const logos = styles.map(({ firstBold, lastBold, ...style }, index) => {
     const isActive = currentStyle === index
-    console.log(isActive, currentStyle, index)
     let label
     const styles = {
       backgroundColor: color,
